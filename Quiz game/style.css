@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header,
+footer {
+  text-align: center;
+  padding: 1rem;
+}
+
+#quiz-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+#question {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+#answers button {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+#answers button:hover {
+  transform: scale(1.05);
+  background: #f1f1f1;
+}
+
+#answers button.correct {
+  background: #4caf50;
+  color: #fff;
+}
+
+#answers button.wrong {
+  background: #e63946;
+  color: #fff;
+}
+
+#next-btn {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: #ffcc00;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#next-btn:hover {
+  background: #ffdb4d;
+}
+#next-btn:disabled {
+  background: #ccc;
+}
+#score-container {
+  text-align: center;
+}
+#score-container h2 {
+  margin-bottom: 1rem;
+}
+#restart-btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: #ffcc00;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#restart-btn:hover {
+  background: #ffdb4d;
+}
+@media (max-width: 600px) {
+  #quiz-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  #question {
+    font-size: 1.1rem;
+  }
+  #answers button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  #next-btn,
+  #restart-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}

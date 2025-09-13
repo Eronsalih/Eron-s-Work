@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Expense Tracker</h1>
+    </header>
+
+    <main>
+      <section>
+        <form id="expense-form" autocomplete="off">
+          <h2>Add New Expense</h2>
+
+          <label for="amount">Amount ($):</label>
+          <input
+            type="number"
+            id="amount"
+            name="amount"
+            min="0.01"
+            step="0.01"
+            required
+            placeholder="e.g. 25.50"
+          />
+
+          <label for="category">Category:</label>
+          <select id="category" name="category" required>
+            <option value="" disabled selected>Select category</option>
+            <option value="food">Food</option>
+            <option value="transport">Transport</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="bills">Bills</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="description">Description:</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="2"
+            placeholder="Optional description..."
+          ></textarea>
+
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required max="" />
+
+          <button type="submit">Add Expense</button>
+        </form>
+
+        <div class="filters" id="filters">
+          <div>
+            <label for="filter-category">Filter by Category:</label>
+            <select id="filter-category">
+              <option value="all" selected>All</option>
+              <option value="food">Food</option>
+              <option value="transport">Transport</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="bills">Bills</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="filter-start-date">Start Date:</label>
+            <input type="date" id="filter-start-date" />
+          </div>
+          <div>
+            <label for="filter-end-date">End Date:</label>
+            <input type="date" id="filter-end-date" />
+          </div>
+          <div style="display: flex; align-items: flex-end">
+            <button
+              id="clear-filters"
+              style="
+                padding: 0.5rem 1rem;
+                background: #dc3545;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+              "
+            >
+              Clear Filters
+            </button>
+          </div>
+        </div>
+
+        <div class="summary" id="summary">
+          <h3>Total Balance</h3>
+          <div class="summary-total" id="total-balance">$0.00</div>
+          <div class="category-breakdown" id="category-breakdown">
+            <!-- dynamic category totals here -->
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="expense-list" id="expense-list">
+          <h2>Expenses</h2>
+          <!-- expense items dynamically added here -->
+          <div style="text-align: center; color: #777; margin-top: 2rem">
+            No expenses added yet.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section id="chart-container">
+      <canvas id="expense-chart"></canvas>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

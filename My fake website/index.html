@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+     <header class="hero">
+    <nav class="navbar">
+      <div class="logo">FakeShopDetector</div>
+      <ul class="nav-links">
+        <li><a href="#scanner">Scanner</a></li>
+        <li><a href="#about">How It Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>🕵️‍♂️ FakeShop Detector</h1>
+      <p>Scan and reveal the truth behind suspicious websites with real-time analysis.</p>
+      <a href="#scanner" class="cta-button">Start Scanning</a>
+    </div>
+  </header>
+
+  <section id="scanner" class="scanner-section">
+    <div class="section-wrapper">
+      <h2>🔍 URL Scanner</h2>
+      <p>Enter a website URL to check its safety status instantly.</p>
+      <input type="text" id="urlInput" placeholder="https://example.com" />
+      <button onclick="analyzeSite()">Analyze Site</button>
+      <div id="resultBox" class="hidden">
+        <h3>Scan Result</h3>
+        <div id="messages"></div>
+        <div id="riskLevel"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="section-wrapper">
+      <h2>📊 How It Works</h2>
+      <p>
+        We analyze multiple risk indicators including:
+        <ul>
+          <li>Presence of HTTPS</li>
+          <li>Use of suspicious keywords</li>
+          <li>Domain complexity</li>
+          <li>Results from VirusTotal</li>
+        </ul>
+        This data is compiled into a risk score to warn you before you get scammed.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="section-wrapper">
+      <h2>📨 Report a Site / Contact Us</h2>
+      <form action="https://formspree.io/f/your_form_id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Message or report URL..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 FakeShop Detector. All rights reserved.</p>
+    </div>
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colorful Login Page</title>
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #70e1f5, #ffd194);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .login-container {
+        background: white;
+        padding: 2rem 3rem;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        animation: fadeInUp 1s ease forwards;
+        transform: translateY(30px);
+        opacity: 0;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #333;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #555;
+        font-weight: 600;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid #eee;
+        border-radius: 10px;
+        outline: none;
+        font-size: 1rem;
+        transition: border 0.3s, box-shadow 0.3s;
+      }
+
+      input:focus {
+        border-color: #6c63ff;
+        box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+      }
+
+      .btn {
+        display: inline-block;
+        width: 100%;
+        padding: 0.75rem;
+        background: linear-gradient(to right, #6c63ff, #5be7a9);
+        border: none;
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+      }
+
+      .btn:hover {
+        background: linear-gradient(to right, #5be7a9, #6c63ff);
+        transform: scale(1.03);
+      }
+
+      .links {
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      .links a {
+        color: #6c63ff;
+        text-decoration: none;
+        margin: 0 0.5rem;
+        transition: color 0.3s;
+      }
+
+      .links a:hover {
+        color: #444;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 480px) {
+        .login-container {
+          padding: 2rem 1.5rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        .btn {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+        <button type="submit" class="btn">Sign In</button>
+        <div class="links">
+          <a href="#">Forgot Password?</a> |
+          <a
+            href="C:\Users\erons\Desktop\Eron's Work\My fake website\signupForm.html"
+            >Sign Up</a
+          >
+        </div>
+      </form>
+    </div>
+    <script>
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+      const btn = document.querySelector(".btn");
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (
+          email.value === "eronsalihu19@gmail.com" ||
+          password.value === "Traktori1"
+        ) {
+          alert("Login successful!");
+          // Here you can add further logic for successful login
+        } else {
+          alert("Please fill in all fields.");
+          // Here you can add further logic for login
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #0e101a;
+  color: #ffffff;
+  line-height: 1.6;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+.logo {
+  font-size: 1.5rem;
+  color: #00ffff;
+  font-weight: bold;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #00ffff;
+}
+.hero {
+  background: linear-gradient(135deg, #2b5876, #4e4376);
+  padding-top: 100px;
+  padding-bottom: 60px;
+  text-align: center;
+  color: #fff;
+}
+.hero-content {
+  max-width: 800px;
+  margin: auto;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.cta-button {
+  padding: 12px 24px;
+  background: #00bcd4;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.cta-button:hover {
+  background: #008ba3;
+}
+.section-wrapper {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #222;
+  color: #fff;
+}
+button {
+  padding: 14px 24px;
+  border: none;
+  background: #2196f3;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button:hover {
+  background: #1976d2;
+}
+#resultBox {
+  margin-top: 20px;
+  background: #1f2733;
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.safe {
+  color: #00e676;
+  font-weight: bold;
+}
+.warning {
+  color: #ffeb3b;
+  font-weight: bold;
+}
+.danger {
+  color: #ff5252;
+  font-weight: bold;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #ccc;
+}
+.hidden {
+  display: none;
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}

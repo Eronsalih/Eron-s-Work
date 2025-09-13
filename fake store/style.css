@@ -1,0 +1,106 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background-color: #1e1e2f;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #00ffff;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00bcd4;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #008c9e;
+}
+
+#resultBox {
+  margin-top: 25px;
+  background: #2a2a3b;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#messages p {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.safe {
+  color: #00e676;
+  font-weight: bold;
+}
+
+.warning {
+  color: #ffeb3b;
+  font-weight: bold;
+}
+
+.danger {
+  color: #ff5252;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.hidden {
+  display: none;
+}

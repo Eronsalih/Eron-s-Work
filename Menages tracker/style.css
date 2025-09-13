@@ -1,0 +1,226 @@
+:root {
+  --color-food: #ff6b6b;
+  --color-transport: #4dabf7;
+  --color-entertainment: #f3a712;
+  --color-bills: #6c757d;
+  --color-other: #20c997;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header {
+  background: #222;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+main {
+  flex: 1;
+  padding: 1rem 2rem;
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+@media (max-width: 720px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+/* Form styling */
+form {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+form label {
+  font-weight: 600;
+}
+form input,
+form select,
+form textarea {
+  padding: 0.5rem;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: var(--color-food);
+  outline: none;
+}
+form button {
+  background: var(--color-food);
+  border: none;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+form button:hover {
+  background: #d44f4f;
+}
+
+/* Expense List */
+.expense-list {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  max-height: 60vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.expense-list h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.expense-item {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1fr 1.5fr 0.5fr;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+.expense-item:last-child {
+  border-bottom: none;
+}
+.expense-category {
+  font-weight: 600;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+.category-food {
+  background: var(--color-food);
+}
+.category-transport {
+  background: var(--color-transport);
+}
+.category-entertainment {
+  background: var(--color-entertainment);
+}
+.category-bills {
+  background: var(--color-bills);
+}
+.category-other {
+  background: var(--color-other);
+}
+
+.expense-amount {
+  font-weight: 700;
+  text-align: right;
+  color: #222;
+}
+.expense-date {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+}
+.expense-desc {
+  font-style: italic;
+  color: #555;
+}
+
+/* Totals and filters */
+.summary {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  margin-bottom: 1rem;
+}
+.summary h3 {
+  margin: 0 0 0.5rem 0;
+}
+.summary-total {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.category-breakdown {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.category-breakdown > div {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  min-width: 90px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Filters */
+.filters {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.filters > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 150px;
+}
+.filters label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.filters input,
+.filters select {
+  padding: 0.4rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1.5px solid #ccc;
+  transition: border-color 0.3s;
+}
+.filters input:focus,
+.filters select:focus {
+  border-color: var(--color-food);
+  outline: none;
+}
+
+/* Chart container */
+#chart-container {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  grid-column: span 2;
+  max-width: 900px;
+  margin: auto;
+}
