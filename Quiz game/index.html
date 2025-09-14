@@ -3,20 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Quiz Game</title>
+    <title>AI Quiz & Flashcards</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header>
-      <h1>AI-Powered Quiz</h1>
+      <h1>AI Quiz & Flashcards</h1>
       <div id="score">Score: 0</div>
+      <button id="mode-toggle">Switch to Flashcards</button>
     </header>
 
     <main>
-      <div id="quiz-container">
+      <!-- Quiz Mode -->
+      <div id="quiz-container" class="mode">
         <div id="question">Loading question...</div>
         <div id="answers"></div>
         <button id="next-btn" disabled>Next</button>
+      </div>
+
+      <!-- Flashcard Mode -->
+      <div id="flashcard-container" class="mode hidden">
+        <div class="flashcard" id="flashcard">
+          <div class="front">Question...</div>
+          <div class="back">Answer...</div>
+        </div>
+        <div class="flash-actions">
+          <button id="know-btn" class="correct">✅ I Knew It</button>
+          <button id="dontknow-btn" class="wrong">❌ I Forgot</button>
+        </div>
       </div>
     </main>
 

@@ -1,120 +1,95 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+/* existing styles remain */
+.hidden {
+  display: none;
 }
 
-body {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+#mode-toggle {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #ff6600;
   color: #fff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-header,
-footer {
-  text-align: center;
-  padding: 1rem;
+#mode-toggle:hover {
+  background: #ff8533;
 }
 
-#quiz-container {
-  max-width: 600px;
+/* Flashcard styles */
+#flashcard-container {
+  max-width: 400px;
   margin: 2rem auto;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
-#question {
-  font-size: 1.3rem;
+.flashcard {
+  width: 100%;
+  height: 250px;
+  perspective: 1000px;
+  cursor: pointer;
   margin-bottom: 1rem;
 }
 
-#answers button {
-  display: block;
+.flashcard .front,
+.flashcard .back {
+  position: absolute;
   width: 100%;
-  margin: 0.5rem 0;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 8px;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
   background: #fff;
   color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.6s;
+}
+
+.flashcard .back {
+  transform: rotateY(180deg);
+}
+
+.flashcard.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.flashcard.flipped .back {
+  transform: rotateY(0);
+}
+
+.flash-actions button {
+  margin: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s, background 0.3s;
 }
 
-#answers button:hover {
-  transform: scale(1.05);
-  background: #f1f1f1;
-}
-
-#answers button.correct {
+.flash-actions .correct {
   background: #4caf50;
   color: #fff;
 }
 
-#answers button.wrong {
+.flash-actions .wrong {
   background: #e63946;
   color: #fff;
 }
-
-#next-btn {
-  margin-top: 1rem;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  background: #ffcc00;
-  color: #333;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
+.flash-actions .next {
+  background: #2196f3;
+  color: #fff;
 }
-
-#next-btn:hover {
-  background: #ffdb4d;
+.flash-actions .correct:hover {
+  background: #66bb6a;
 }
-#next-btn:disabled {
-  background: #ccc;
-}
-#score-container {
-  text-align: center;
-}
-#score-container h2 {
-  margin-bottom: 1rem;
-}
-#restart-btn {
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  background: #ffcc00;
-  color: #333;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-#restart-btn:hover {
-  background: #ffdb4d;
-}
-@media (max-width: 600px) {
-  #quiz-container {
-    margin: 1rem;
-    padding: 1rem;
-  }
-  #question {
-    font-size: 1.1rem;
-  }
-  #answers button {
-    padding: 0.6rem;
-    font-size: 0.9rem;
-  }
-  #next-btn,
-  #restart-btn {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-  }
+.flash-actions .wrong:hover {
+  background: #f06670;
 }
