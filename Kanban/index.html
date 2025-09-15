@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Custom Kanban Board</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Kanban Board</h1>
+      <div class="controls">
+        <input
+          id="search"
+          placeholder="Search cards..."
+          aria-label="Search cards"
+        />
+        <button id="add-col-btn" title="Add column">+ Column</button>
+        <button id="export-btn" title="Export board">Export</button>
+        <input
+          id="import-file"
+          type="file"
+          accept="application/json"
+          style="display: none"
+        />
+        <button id="import-btn" title="Import board">Import</button>
+        <button id="undo-btn" title="Undo" disabled>Undo</button>
+        <button id="redo-btn" title="Redo" disabled>Redo</button>
+      </div>
+    </header>
+
+    <main id="board" class="board" aria-live="polite"></main>
+
+    <!-- Card modal -->
+    <div
+      id="modal"
+      class="modal hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+    >
+      <div class="modal-content" role="document">
+        <button class="close" id="modal-close" aria-label="Close">×</button>
+        <h2 id="modal-title">Card</h2>
+        <label
+          >Title
+          <input id="card-title" />
+        </label>
+        <label
+          >Description
+          <textarea id="card-desc" rows="6"></textarea>
+        </label>
+        <div class="modal-actions">
+          <button id="save-card">Save</button>
+          <button id="delete-card" class="danger">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <template id="column-template">
+      <section class="column" draggable="false">
+        <header class="column-header">
+          <h3 class="col-title" contenteditable="true" aria-label="Column name">
+            New Column
+          </h3>
+          <div class="col-actions">
+            <button class="add-card-btn" title="Add card">+ Card</button>
+            <button class="remove-col-btn" title="Remove column">🗑</button>
+          </div>
+        </header>
+        <div class="card-list" role="list"></div>
+      </section>
+    </template>
+
+    <template id="card-template">
+      <article class="card" role="listitem" draggable="true" tabindex="0">
+        <div class="card-title"></div>
+        <div class="card-meta"></div>
+      </article>
+    </template>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
