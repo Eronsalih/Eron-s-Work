@@ -8,7 +8,6 @@ start_btn.addEventListener("click", () => {
   start_btn.classList.add("hide");
 });
 continue_btn.addEventListener("click", () => {
-  info_box.classList.remove("activeInfo");
   continue_btn.classList.add("activeQuiz");
-  // Here you can add code to start the quiz
+  quiz_box.classList.add("activeQuizze");
 });

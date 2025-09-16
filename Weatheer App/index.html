@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Weather App</h1>
+        <p>Kërko motin në çdo qytet</p>
+      </header>
+
+      <section class="search-box">
+        <input type="text" id="city-input" placeholder="Shkruaj qytetin..." />
+        <button id="search-btn">🔍</button>
+      </section>
+
+      <section class="weather-result hidden" id="weather">
+        <h2 id="city-name"></h2>
+        <p id="date"></p>
+        <div class="weather-info">
+          <img id="weather-icon" src="" alt="Ikona e motit" />
+          <h3 id="temperature"></h3>
+        </div>
+        <p id="description"></p>
+        <p>💨 Era: <span id="wind"></span> km/h</p>
+        <p>💧 Lagështia: <span id="humidity"></span>%</p>
+      </section>
+
+      <p class="error hidden" id="error">
+        ❌ Qyteti nuk u gjet, provo përsëri!
+      </p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+/* styles.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #2980b9, #6dd5fa, #ffffff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  color: #333;
+}
+
+.container {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #2980b9;
+  margin-bottom: 0.3rem;
+}
+
+header p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 2px solid #2980b9;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.search-box button {
+  background: #2980b9;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-box button:hover {
+  background: #1f6390;
+}
+
+.weather-result {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f0f9ff;
+  border-radius: 12px;
+  animation: fadeIn 0.6s ease;
+}
+
+.weather-result h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.weather-result p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.weather-info img {
+  width: 60px;
+}
+
+.weather-info h3 {
+  font-size: 2.5rem;
+  color: #2980b9;
+}
+
+.error {
+  color: #e74c3c;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Animacion i thjeshtë */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
