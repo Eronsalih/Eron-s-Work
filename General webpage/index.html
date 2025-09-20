@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div
+        class="container"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <div class="brand" aria-hidden="false">
+          <div class="logo" aria-hidden="true">DS</div>
+          <div>
+            <div style="font-weight: 700">DevStudio</div>
+            <div class="small muted">Portfolio & Tutorials</div>
+          </div>
+        </div>
+
+        <nav aria-label="Main navigation">
+          <ul class="nav-list" id="navList">
+            <li><a href="#hero" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#tutorials" class="nav-link">Tutorials</a></li>
+            <li><a href="#playground" class="nav-link">Playground</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="#codesamples" class="nav-link">CodeSamples</a></li>
+          </ul>
+          <div class="left-actions" style="gap: 8px">
+            <button
+              id="themeToggle"
+              class="btn ghost"
+              aria-pressed="false"
+              title="Toggle theme"
+            >
+              🌙 Theme
+            </button>
+            <a class="btn cta" href="#" id="downloadCv">Download CV</a>
+            <div
+              class="burger"
+              id="burger"
+              aria-hidden="false"
+              aria-label="Open menu"
+              role="button"
+              tabindex="0"
+            >
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section id="hero" class="hero">
+        <div class="container hero-grid">
+          <div>
+            <h1 class="hero-title">
+              Hi, I’m Eron — Developer, Teacher, Builder.
+            </h1>
+            <p class="hero-sub">
+              I build modern web apps and interactive tutorials. Explore
+              projects, read lessons, and try live mini-apps in the playground.
+            </p>
+            <div class="hero-ctas">
+              <button
+                class="btn primary"
+                onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})"
+              >
+                View Projects
+              </button>
+              <button
+                class="btn ghost"
+                onclick="document.getElementById('tutorials').scrollIntoView({behavior:'smooth'})"
+              >
+                Explore Tutorials
+              </button>
+            </div>
+            <div style="margin-top: 18px" class="muted small">
+              Available for freelance & collaboration —
+              <a href="#contact">let's talk</a>.
+            </div>
+          </div>
+
+          <div class="card">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 12px;
+              "
+            >
+              <div
+                style="
+                  width: 64px;
+                  height: 64px;
+                  border-radius: 10px;
+                  background: linear-gradient(
+                    135deg,
+                    var(--accent),
+                    var(--accent-2)
+                  );
+                  display: grid;
+                  place-items: center;
+                  color: white;
+                  font-weight: 700;
+                "
+              >
+                ES
+              </div>
+              <div>
+                <div style="font-weight: 700">Eron Salihu</div>
+                <div class="muted small">Front-end Developer</div>
+              </div>
+            </div>
+            <div class="small muted">Quick links</div>
+            <div
+              style="display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap"
+            >
+              <a
+                class="chip"
+                href="#"
+                onclick="openInNewTab('https://github.com/Eronsalih/Eron-s-Work')"
+                >GitHub</a
+              >
+              <a
+                class="chip"
+                href="#"
+                onclick="openInNewTab(`https://www.linkedin.com/in/eron-salihu-0287bb229/`)"
+                >LinkedIn</a
+              >
+              <a class="chip" href="#" onclick="openInNewTab('#')"
+                >Code Samples</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="container">
+          <h2 class="section-title">About Me</h2>
+          <div class="two-col">
+            <div class="card about reveal" id="aboutCard">
+              <p>
+                I'm a passionate developer who loves building clean, usable
+                interfaces and teaching others how to code. This site is both my
+                portfolio and my learning hub.
+              </p>
+              <p>
+                Here you'll find curated tutorials, live exercises, and projects
+                demonstrating real work — everything designed to be modular so
+                you can expand it.
+              </p>
+            </div>
+            <div class="card reveal" id="contactCard">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <div>
+                  <div class="small muted">Email</div>
+                  <div style="font-weight: 700">eronsalihu19@gmail.com</div>
+                </div>
+                <div style="text-align: right">
+                  <div class="small muted">Resume</div>
+                  <button class="btn ghost" id="cvBtn">View</button>
+                </div>
+              </div>
+
+              <hr
+                style="
+                  margin: 14px 0;
+                  border: none;
+                  border-top: 1px solid rgba(0, 0, 0, 0.04);
+                "
+              />
+
+              <div style="display: flex; gap: 8px; flex-wrap: wrap">
+                <a class="chip" href="#projects">Projects</a>
+                <a class="chip" href="#tutorials">Tutorials</a>
+                <a class="chip" href="#playground">Playground</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <div class="container">
+          <h2 class="section-title">Skills</h2>
+          <div class="card">
+            <div
+              style="
+                display: flex;
+                gap: 18px;
+                align-items: center;
+                flex-wrap: wrap;
+              "
+            >
+              <div style="flex: 1; min-width: 220px">
+                <div class="skill">
+                  <div style="font-weight: 700">HTML & Accessibility</div>
+                  <div class="small muted">95%</div>
+                </div>
+                <div class="skill-bar" aria-hidden="true">
+                  <div class="skill-fill" data-fill="95%"></div>
+                </div>
+
+                <div class="skill" style="margin-top: 12px">
+                  <div style="font-weight: 700">CSS & Design</div>
+                  <div class="small muted">92%</div>
+                </div>
+                <div class="skill-bar" aria-hidden="true">
+                  <div class="skill-fill" data-fill="92%"></div>
+                </div>
+
+                <div class="skill" style="margin-top: 12px">
+                  <div style="font-weight: 700">JavaScript</div>
+                  <div class="small muted">88%</div>
+                </div>
+                <div class="skill-bar" aria-hidden="true">
+                  <div class="skill-fill" data-fill="88%"></div>
+                </div>
+              </div>
+
+              <div style="width: 320px; min-width: 220px">
+                <div style="font-weight: 700; margin-bottom: 8px">
+                  Tools & Frameworks
+                </div>
+                <div class="small muted">
+                  React • Node.js • Express • Git • Webpack • Docker
+                </div>
+                <div style="margin-top: 18px">
+                  <a
+                    class="chip"
+                    href="#"
+                    onclick="openInNewTab('https://github.com')"
+                    >View GitHub →</a
+                  >
+                  <a class="chip" href="#" onclick="openInNewTab('#')"
+                    >Download CV</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <div class="container">
+          <h2 class="section-title">Projects</h2>
+          <div class="card" style="margin-bottom: 12px">
+            <div class="filters" aria-hidden="true">
+              <div class="chip" data-filter="all">All</div>
+              <div class="chip" data-filter="web">Web</div>
+              <div class="chip" data-filter="tool">Tool</div>
+              <div class="chip" data-filter="design">Design</div>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+              <!-- Project cards generated by JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TUTORIALS -->
+      <section id="tutorials">
+        <div class="container">
+          <h2 class="section-title">Tutorials & Lessons</h2>
+
+          <div class="card">
+            <div class="search-row">
+              <input
+                id="lessonSearch"
+                placeholder="Search lessons by title, tag or difficulty..."
+                aria-label="Search lessons"
+              />
+              <select
+                id="difficultyFilter"
+                style="padding: 10px; border-radius: 10px"
+              >
+                <option value="all">All difficulties</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+              </select>
+            </div>
+
+            <div class="tutorials-grid" id="tutorialGrid">
+              <!-- Lessons rendered by JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLAYGROUND -->
+      <section id="playground">
+        <div class="container">
+          <h2 class="section-title">Interactive Playground</h2>
+          <div class="card">
+            <div
+              style="
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+                margin-bottom: 12px;
+              "
+            >
+              <button class="chip" onclick="openPlay('quiz')">Quiz Demo</button>
+              <button class="chip" onclick="openPlay('expense')">
+                Expense Tracker
+              </button>
+              <button class="chip" onclick="openPlay('custom')">
+                Open Custom Sandbox
+              </button>
+            </div>
+
+            <div id="playgroundArea" class="playground-area">
+              <textarea
+                id="playJs"
+                placeholder="// Write small HTML/JS here. Example: document.body.innerHTML = 'Hello'"
+              ></textarea>
+              <div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 8px;
+                  "
+                >
+                  <div class="small muted">Preview</div>
+                  <div>
+                    <button class="btn ghost" onclick="runPreview()">
+                      Run
+                    </button>
+                  </div>
+                </div>
+                <iframe
+                  id="playPreview"
+                  class="playground-preview"
+                  sandbox="allow-scripts allow-same-origin"
+                ></iframe>
+              </div>
+            </div>
+            <div class="small muted" style="margin-top: 10px">
+              Tip: Use this to prototype widgets or small demos for tutorials.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="code-samples">
+        <div class="container">
+          <h2 class="section-title">Code Samples</h2>
+          <div class="card">
+            <p>
+              Here you can explore some of my sample projects, and also try
+              writing your own JavaScript code in the editor below:
+            </p>
+
+            <!-- Chips section -->
+            <div class="chip-wrapper">
+              <a class="chip" href="#" onclick="openInNewTab('#')">
+                JavaScript Examples
+              </a>
+              <a class="chip" href="#" onclick="openInNewTab('#')">
+                React Components
+              </a>
+            </div>
+
+            <!-- Code Editor -->
+            <div class="code-editor">
+              <label for="user-code">Write your code here:</label>
+              <pre
+                class="editor"
+              ><code id="user-code" class="language-js" contenteditable="true">
+// Example: Try typing your JavaScript code here
+console.log("Hello World!");
+        </code></pre>
+              <button onclick="runCode()">Run Code</button>
+            </div>
+
+            <!-- Output -->
+            <div id="output" class="output-box">
+              <strong>Output:</strong>
+              <pre id="output-box" class="output"></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Prism.js for syntax highlighting -->
+      <link
+        href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+        rel="stylesheet"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="container">
+          <h2 class="section-title">Contact</h2>
+          <div class="two-col">
+            <div class="card">
+              <form class="contact-form" id="contactForm">
+                <input name="name" placeholder="Your name" required />
+                <input
+                  name="email"
+                  placeholder="Your email"
+                  type="email"
+                  required
+                />
+                <textarea
+                  name="message"
+                  rows="6"
+                  placeholder="Your message"
+                ></textarea>
+                <button type="submit">Send message</button>
+                <div
+                  id="contactResult"
+                  class="small muted"
+                  aria-live="polite"
+                  style="margin-top: 8px"
+                ></div>
+              </form>
+            </div>
+
+            <div class="card">
+              <div style="font-weight: 700; margin-bottom: 8px">Office</div>
+              <div class="muted small">Remote • Available for hire</div>
+              <hr
+                style="
+                  margin: 12px 0;
+                  border: none;
+                  border-top: 1px solid rgba(0, 0, 0, 0.04);
+                "
+              />
+              <div style="display: grid; gap: 8px">
+                <div>
+                  <strong>Email</strong>
+                  <div class="small muted">eronsalihu19@gmail.com</div>
+                </div>
+                <div>
+                  <strong>Phone</strong>
+                  <div class="small muted">+383 49-474-084</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <div class="container">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 12px;
+              flex-wrap: wrap;
+            "
+          >
+            <div class="small muted">
+              © <span id="year"></span> DevStudio — Built with ❤️
+            </div>
+            <div style="display: flex; gap: 8px">
+              <a
+                class="chip"
+                href="#"
+                onclick="openInNewTab(`https://github.com/Eronsalih/Eron-s-Work`)"
+                >GitHub</a
+              >
+              <a
+                class="chip"
+                href="#"
+                onclick="openInNewTab('https://twitter.com')"
+                >Instagram</a
+              >
+              <a
+                class="chip"
+                href="#"
+                onclick="openInNewTab(`https://www.linkedin.com/in/eron-salihu-0287bb229/`)"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Modal Backdrop -->
+    <div
+      id="modalBackdrop"
+      class="modal-backdrop"
+      role="dialog"
+      aria-hidden="true"
+      aria-modal="true"
+    >
+      <div class="modal" role="document" aria-labelledby="modalTitle">
+        <div class="modal-header">
+          <div id="modalTitle" style="font-weight: 700">Title</div>
+          <div>
+            <button class="btn ghost" onclick="closeModal()">Close</button>
+          </div>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <!-- filled by JS -->
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
